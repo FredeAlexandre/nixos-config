@@ -84,6 +84,14 @@
     };
     zsh = {
       enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+
+      shellAliases = {
+        ll = "ls -l";
+        update = "just --justfile ./Configuration/justfile rebuild";
+      };
     };
   };
 
