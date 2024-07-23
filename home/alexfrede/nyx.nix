@@ -1,0 +1,5 @@
+{configVars, ...}: {
+  imports = [
+    common/core
+  ];
+}
