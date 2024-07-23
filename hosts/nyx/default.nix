@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nyx"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -43,8 +43,6 @@
   };
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
-  environment.variables.EDITOR = "gnome-text-editor";
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -108,8 +106,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    vim
+    just
+    vscode
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -138,5 +137,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
