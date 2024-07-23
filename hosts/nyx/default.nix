@@ -15,6 +15,7 @@
     ]
     ++ (map configLib.relativeToRoot [
       "hosts/common/core"
+      "hosts/common/users/alexfrede"
     ]);
 
   # Bootloader.
