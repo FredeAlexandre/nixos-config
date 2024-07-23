@@ -93,6 +93,11 @@
         update = "just --justfile ./Configuration/justfile rebuild";
       };
     };
+    oh-my-posh = {
+      enable = true;
+      enableZshIntegration = true;
+      useTheme = "gruvbox";
+    };
   };
 
   # Nicely reload system units when changing configs
