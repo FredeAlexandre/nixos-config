@@ -77,6 +77,11 @@
 
   programs = {
     home-manager.enable = true;
+    git = {
+      enable = true;
+      userEmail = "alexandre.frede.pro@gmail.com  ";
+      userName = "Alexandre Frede";
+    };
   };
 
   # Nicely reload system units when changing configs
