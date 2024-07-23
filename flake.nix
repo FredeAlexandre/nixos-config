@@ -7,7 +7,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
+    alejandra.url = "https://flakehub.com/f/kamadorueda/alejandra/3.*.tar.gz";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
   };
 
