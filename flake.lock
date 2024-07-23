@@ -9,18 +9,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1660592437,
+        "lastModified": 1,
         "narHash": "sha256-xFumnivtVwu5fFBOrTxrv6fv3geHKF04RGP23EsDVaI=",
-        "owner": "kamadorueda",
-        "repo": "alejandra",
-        "rev": "e7eac49074b70814b542fee987af2987dd0520b5",
-        "type": "github"
+        "rev": "ef03f7ef74ec97fd91a016a51c9c9667fb315652",
+        "revCount": 501,
+        "type": "tarball",
+        "url": "https://api.flakehub.com/f/pinned/kamadorueda/alejandra/3.0.0/0189dfd6-7f94-73d1-a2ab-3289043ca5dc/source.tar.gz"
       },
       "original": {
-        "owner": "kamadorueda",
-        "ref": "3.0.0",
-        "repo": "alejandra",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://flakehub.com/f/kamadorueda/alejandra/3.%2A.tar.gz"
       }
     },
     "fenix": {
@@ -95,11 +93,26 @@
         "url": "https://flakehub.com/f/NixOS/nixpkgs/0.2405.%2A.tar.gz"
       }
     },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1721562059,
+        "narHash": "sha256-Tybxt65eyOARf285hMHIJ2uul8SULjFZbT9ZaEeUnP8=",
+        "rev": "68c9ed8bbed9dfce253cc91560bf9043297ef2fe",
+        "revCount": 655874,
+        "type": "tarball",
+        "url": "https://api.flakehub.com/f/pinned/NixOS/nixpkgs/0.1.655874%2Brev-68c9ed8bbed9dfce253cc91560bf9043297ef2fe/0190dca2-dbb6-76b9-8acb-c720958e7f45/source.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://flakehub.com/f/NixOS/nixpkgs/0.1.0.tar.gz"
+      }
+    },
     "root": {
       "inputs": {
         "alejandra": "alejandra",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
     "rust-analyzer-src": {
