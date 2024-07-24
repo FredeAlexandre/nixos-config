@@ -55,12 +55,6 @@
         url = "https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20211013-cb3f58a.diff";
         hash = "sha256-+yV33rowhHPpAZx51jzeKzhUyipEAGUjCiwUYziaAiE=";
       })
-
-      # Desktop Only - Used for dmenu show only relevent apps
-      (pkgs.fetchpatch {
-        url = "https://dwm.suckless.org/patches/desktoponly/dwm-desktoponly-20230806-e81f17d.diff";
-        hash = "";
-      })
     ];
   };
   services.xserver.displayManager.startx.enable = true;

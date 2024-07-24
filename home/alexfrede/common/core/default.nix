@@ -60,16 +60,16 @@
         #   sha256 = "1y4fkwn911avwk3nq2cqmgb2rynbqibgcpx7yriir0lf2x2ww1b6";
         # })
       ];
-      configFile = writeText "config.def.h" (builtins.readFile ../common/dotfiles/st/config.def.h);
+      configFile = writeText "config.def.h" (builtins.readFile ../dotfiles/st/config.def.h);
     }))
     (dmenu.overrideAttrs (oldAttrs: rec {
       patches = [
         # (fetchpatch {
-        #   url = "https://st.suckless.org/patches/rightclickpaste/st-rightclickpaste-0.8.2.diff";
-        #   sha256 = "1y4fkwn911avwk3nq2cqmgb2rynbqibgcpx7yriir0lf2x2ww1b6";
+        #   url = "https://tools.suckless.org/dmenu/patches/desktoponly/dmenu-desktoponly-20230805-7ab0cb5.diff";
+        #   sha256 = "sha256-Z4ASSL+bOfWArojvl0zlzB2pXNM+PQjb+V5HHoN1vds=";
         # })
       ];
-      configFile = writeText "config.def.h" (builtins.readFile ../common/dotfiles/dmenu/config.def.h);
+      configFile = writeText "config.def.h" (builtins.readFile ../dotfiles/dmenu/config.def.h);
     }))
   ];
 
