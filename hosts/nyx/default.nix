@@ -39,6 +39,17 @@
   services.xserver.dpi = 180;
 
   services.xserver.windowManager.dwm.enable = true;
+  services.xserver.windowManager.dwm.package = pkgs.dwm.override {
+    conf = ../common/dotfiles/dwm/config.d.h;
+    patches = [
+      (pkgs.fetchpatch {
+        # Always Center Patch
+        url = "https://dwm.suckless.org/patches/alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff";
+        # Generated using `nix-prefetch-url "url" | xargs nix hash to-sri --type sha256`
+        hash = "sha256-XJHBTVmFRFM5kqi9Y0XI/DmUBnjCdiAO8X2PIDNL+MM=";
+      })
+    ];
+  };
   services.xserver.displayManager.startx.enable = true;
 
   services.greetd = {
