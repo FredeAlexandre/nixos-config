@@ -21,10 +21,10 @@
       # "$HOME/scripts/talon_scripts"
     ];
     sessionVariables = {
-      # FLAKE = "$HOME/src/nix-config";
+      FLAKE = "$HOME/Configuration";
       SHELL = "zsh";
-      # TERM = "kitty";
-      # TERMINAL = "kitty";
+      TERM = "st";
+      TERMINAL = "st";
       # EDITOR = "nvim";
       # MANPAGER = "batman"; # see ./cli/bat.nix
     };
