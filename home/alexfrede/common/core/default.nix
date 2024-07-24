@@ -53,24 +53,23 @@
     unrar # rar extraction
     wget # downloader
     zip # zip compression
-    (st.overrideAttrs (oldAttrs: rec {
+    (st.override {
       patches = [
         (fetchpatch {
           url = "https://st.suckless.org/patches/colorschemes/st-colorschemes-0.8.5.diff";
           sha256 = "sha256-cJL46IH/DDtcztCXR2u7mpbSes311cezK7wikuAwsB4=";
         })
+        (fetchpatch {
+          url = "https://st.suckless.org/patches/anysize/st-anysize-20220718-baa9357.diff";
+          sha256 = "sha256-yx9VSwmPACx3EN3CAdQkxeoJKJxQ6ziC9tpBcoWuWHc=";
+        })
       ];
-      configFile = writeText "config.def.h" (builtins.readFile ../dotfiles/st/config.def.h);
-    }))
-    (dmenu.overrideAttrs (oldAttrs: rec {
-      patches = [
-        # (fetchpatch {
-        #   url = "https://tools.suckless.org/dmenu/patches/desktoponly/dmenu-desktoponly-20230805-7ab0cb5.diff";
-        #   sha256 = "sha256-Z4ASSL+bOfWArojvl0zlzB2pXNM+PQjb+V5HHoN1vds=";
-        # })
-      ];
-      configFile = writeText "config.def.h" (builtins.readFile ../dotfiles/dmenu/config.def.h);
-    }))
+      conf = builtins.readFile ../dotfiles/st/config.def.h;
+    })
+    (pkgs.unstable.dmenu.override {
+      patches = [];
+      conf = ../dotfiles/dmenu/config.def.h;
+    })
   ];
 
   nixpkgs = {
