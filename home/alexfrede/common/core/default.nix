@@ -30,33 +30,48 @@
     };
   };
 
-  home.packages = builtins.attrValues {
-    inherit
-      (pkgs)
-      borgbackup # backups
-      btop # resource monitor
-      coreutils # basic gnu utils
-      curl
-      eza # ls replacement
-      fd # tree style ls
-      findutils # find
-      fzf # fuzzy search
-      jq # JSON pretty printer and manipulator
-      nix-tree # nix package tree viewer
-      ncdu # TUI disk usage
-      pciutils
-      pfetch # system info
-      pre-commit # git hooks
-      p7zip # compression & encryption
-      ripgrep # better grep
-      usbutils
-      tree # cli dir tree viewer
-      unzip # zip extraction
-      unrar # rar extraction
-      wget # downloader
-      zip # zip compression
-      ;
-  };
+  home.packages = with pkgs; [
+    borgbackup # backups
+    btop # resource monitor
+    coreutils # basic gnu utils
+    curl
+    eza # ls replacement
+    fd # tree style ls
+    findutils # find
+    fzf # fuzzy search
+    jq # JSON pretty printer and manipulator
+    nix-tree # nix package tree viewer
+    ncdu # TUI disk usage
+    pciutils
+    pfetch # system info
+    pre-commit # git hooks
+    p7zip # compression & encryption
+    ripgrep # better grep
+    usbutils
+    tree # cli dir tree viewer
+    unzip # zip extraction
+    unrar # rar extraction
+    wget # downloader
+    zip # zip compression
+    (st.overrideAttrs (oldAttrs: rec {
+      patches = [
+        # (fetchpatch {
+        #   url = "https://st.suckless.org/patches/rightclickpaste/st-rightclickpaste-0.8.2.diff";
+        #   sha256 = "1y4fkwn911avwk3nq2cqmgb2rynbqibgcpx7yriir0lf2x2ww1b6";
+        # })
+      ];
+      configFile = writeText "config.def.h" (builtins.readFile ../common/dotfiles/st/config.def.h);
+    }))
+    (dmenu.overrideAttrs (oldAttrs: rec {
+      patches = [
+        # (fetchpatch {
+        #   url = "https://st.suckless.org/patches/rightclickpaste/st-rightclickpaste-0.8.2.diff";
+        #   sha256 = "1y4fkwn911avwk3nq2cqmgb2rynbqibgcpx7yriir0lf2x2ww1b6";
+        # })
+      ];
+      configFile = writeText "config.def.h" (builtins.readFile ../common/dotfiles/dmenu/config.def.h);
+    }))
+  ];
 
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
