@@ -104,6 +104,8 @@
       syntaxHighlighting.enable = true;
 
       shellAliases = {
+        cd = "z";
+        ls = "eza --icons";
         ll = "ls -l";
         update = "just --justfile ~/Configuration/justfile rebuild";
       };
@@ -112,6 +114,10 @@
       enable = true;
       enableZshIntegration = true;
       useTheme = "gruvbox";
+    };
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
     };
   };
 
