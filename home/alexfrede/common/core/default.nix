@@ -104,6 +104,10 @@
     source = ../dotfiles/startx/.xinitrc;
   };
 
+  home.file."Pictures/wallpaper.png" = {
+    source = ../dotfiles/wallpaper/wallpaper.png;
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 }

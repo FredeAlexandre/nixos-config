@@ -12,7 +12,7 @@ fi
 
 # redshift -PO 3000
 
-# feh --no-fehbg --bg-fill "$HOME/etc/.bg.png"
+feh --no-fehbg --bg-fill "$HOME/Pictures/wallpaper.png"
 
 # export GTK_IM_MODULE='fcitx'
 # export QT_IM_MODULE='fcitx'

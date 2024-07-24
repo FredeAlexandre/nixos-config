@@ -40,13 +40,20 @@
 
   services.xserver.windowManager.dwm.enable = true;
   services.xserver.windowManager.dwm.package = pkgs.dwm.override {
-    conf = ../common/dotfiles/dwm/config.d.h;
+    conf = ../common/dotfiles/dwm/config.def.h;
     patches = [
+      # Generated hash with `nix-prefetch-url "url" | xargs nix hash to-sri --type sha256`
+
+      # Always Center Patch
       (pkgs.fetchpatch {
-        # Always Center Patch
         url = "https://dwm.suckless.org/patches/alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff";
-        # Generated using `nix-prefetch-url "url" | xargs nix hash to-sri --type sha256`
         hash = "sha256-XJHBTVmFRFM5kqi9Y0XI/DmUBnjCdiAO8X2PIDNL+MM=";
+      })
+
+      # Actual Fullscreen
+      (pkgs.fetchpatch {
+        url = "https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20211013-cb3f58a.diff";
+        hash = "sha256-+yV33rowhHPpAZx51jzeKzhUyipEAGUjCiwUYziaAiE=";
       })
     ];
   };
@@ -109,6 +116,7 @@
     st
     dmenu
     greetd.tuigreet
+    feh
     inputs.alejandra.defaultPackage."x86_64-linux"
   ];
 
