@@ -55,10 +55,10 @@
     zip # zip compression
     (st.overrideAttrs (oldAttrs: rec {
       patches = [
-        # (fetchpatch {
-        #   url = "https://st.suckless.org/patches/rightclickpaste/st-rightclickpaste-0.8.2.diff";
-        #   sha256 = "1y4fkwn911avwk3nq2cqmgb2rynbqibgcpx7yriir0lf2x2ww1b6";
-        # })
+        (fetchpatch {
+          url = "https://st.suckless.org/patches/colorschemes/st-colorschemes-0.8.5.diff";
+          sha256 = "sha256-cJL46IH/DDtcztCXR2u7mpbSes311cezK7wikuAwsB4=";
+        })
       ];
       configFile = writeText "config.def.h" (builtins.readFile ../dotfiles/st/config.def.h);
     }))
