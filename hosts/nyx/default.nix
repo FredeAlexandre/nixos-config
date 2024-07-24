@@ -36,10 +36,21 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.dpi = 180;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.windowManager.dwm.enable = true;
+  services.xserver.displayManager.startx.enable = true;
+
+  services.greetd = {
+    enable = true;
+    restart = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --asterisks --time --time-format '%I:%M %p | %a • %h | %F' --cmd startx";
+        user = "alexfrede";
+      };
+    };
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -84,6 +95,9 @@
     neofetch
     git
     lazygit
+    st
+    dmenu
+    greetd.tuigreet
     inputs.alejandra.defaultPackage."x86_64-linux"
   ];
 

@@ -90,7 +90,7 @@
 
       shellAliases = {
         ll = "ls -l";
-        update = "just --justfile ./Configuration/justfile rebuild";
+        update = "just --justfile ~/Configuration/justfile rebuild";
       };
     };
     oh-my-posh = {
@@ -98,6 +98,10 @@
       enableZshIntegration = true;
       useTheme = "gruvbox";
     };
+  };
+
+  home.file.".xinitrc" = {
+    source = ../dotfiles/startx/.xinitrc;
   };
 
   # Nicely reload system units when changing configs
