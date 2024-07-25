@@ -1,0 +1,8 @@
+- [] Make keyboard functions work again
+- [] Make a demnu to manage wifi connections
+- [] Make dmenu to connect to bluetooth devices
+- [] Make work sound output to bluetooth devices
+- [] Find a solution to manage sound inputs and outputs
+- [] Rice up the status bar
+  - [] Make a workspace for a task (browser, terminal, etc)
+  - [] Add left icons to know the basics (volume, connection, power off, etc)
