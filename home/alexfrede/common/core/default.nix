@@ -53,6 +53,7 @@
     unrar # rar extraction
     wget # downloader
     zip # zip compression
+    discord
     (st.override {
       patches = [
         (fetchpatch {

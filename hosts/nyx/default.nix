@@ -38,6 +38,9 @@
   services.xserver.enable = true;
   services.xserver.dpi = 180;
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   services.xserver.windowManager.dwm.enable = true;
   services.xserver.windowManager.dwm.package = pkgs.dwm.override {
     conf = ../common/dotfiles/dwm/config.def.h;
