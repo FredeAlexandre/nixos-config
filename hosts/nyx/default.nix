@@ -50,13 +50,19 @@
       # Always Center Patch
       (pkgs.fetchpatch {
         url = "https://dwm.suckless.org/patches/alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff";
-        hash = "sha256-XJHBTVmFRFM5kqi9Y0XI/DmUBnjCdiAO8X2PIDNL+MM=";
+        hash = "sha256-xQEwrNphaLOkhX3ER09sRPB3EEvxC73oNWMVkqo4iSY=";
       })
 
       # Actual Fullscreen
       (pkgs.fetchpatch {
         url = "https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20211013-cb3f58a.diff";
-        hash = "sha256-+yV33rowhHPpAZx51jzeKzhUyipEAGUjCiwUYziaAiE=";
+        hash = "sha256-vsTuudJCy7Zo1wdwpI/nY7Zu1txXx90QoDfJLmfDUH8=";
+      })
+
+      # Useless gaps
+      (pkgs.fetchpatch {
+        url = "https://dwm.suckless.org/patches/uselessgap/dwm-uselessgap-20211119-58414bee958f2.diff";
+        hash = "sha256-cWDTOtKZXCSFpZuDfKeXb8jA9UMZ28mowlRvMA8G+us=";
       })
     ];
   };
