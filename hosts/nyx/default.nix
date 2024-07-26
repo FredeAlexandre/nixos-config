@@ -45,25 +45,12 @@
   services.xserver.windowManager.dwm.package = pkgs.dwm.override {
     conf = ../common/dotfiles/dwm/config.def.h;
     patches = [
-      # Generated hash with `nix-prefetch-url "url" | xargs nix hash to-sri --type sha256`
-
       # Always Center Patch
-      (pkgs.fetchpatch {
-        url = "https://dwm.suckless.org/patches/alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff";
-        hash = "sha256-xQEwrNphaLOkhX3ER09sRPB3EEvxC73oNWMVkqo4iSY=";
-      })
-
+      ../common/dotfiles/dwm/patches/dwm-alwayscenter-20200625-f04cac6.diff
       # Actual Fullscreen
-      (pkgs.fetchpatch {
-        url = "https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20211013-cb3f58a.diff";
-        hash = "sha256-vsTuudJCy7Zo1wdwpI/nY7Zu1txXx90QoDfJLmfDUH8=";
-      })
-
+      ../common/dotfiles/dwm/patches/dwm-actualfullscreen-20211013-cb3f58a.diff
       # Useless gaps
-      (pkgs.fetchpatch {
-        url = "https://dwm.suckless.org/patches/uselessgap/dwm-uselessgap-20211119-58414bee958f2.diff";
-        hash = "sha256-cWDTOtKZXCSFpZuDfKeXb8jA9UMZ28mowlRvMA8G+us=";
-      })
+      ../common/dotfiles/dwm/patches/dwm-uselessgap-20211119-58414bee958f2.diff
     ];
   };
   services.xserver.displayManager.startx.enable = true;
