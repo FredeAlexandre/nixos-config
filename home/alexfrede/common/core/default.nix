@@ -56,14 +56,8 @@
     discord
     (st.override {
       patches = [
-        (fetchpatch {
-          url = "https://st.suckless.org/patches/colorschemes/st-colorschemes-0.8.5.diff";
-          sha256 = "sha256-cJL46IH/DDtcztCXR2u7mpbSes311cezK7wikuAwsB4=";
-        })
-        (fetchpatch {
-          url = "https://st.suckless.org/patches/anysize/st-anysize-20220718-baa9357.diff";
-          sha256 = "sha256-yx9VSwmPACx3EN3CAdQkxeoJKJxQ6ziC9tpBcoWuWHc=";
-        })
+        ../dotfiles/st/patches/st-colorschemes-0.8.5.diff
+        ../dotfiles/st/patches/st-anysize-20220718-baa9357.diff
       ];
       conf = builtins.readFile ../dotfiles/st/config.def.h;
     })
