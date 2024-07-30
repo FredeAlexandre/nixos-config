@@ -6,3 +6,5 @@
 - [] Rice up the status bar
   - [] Make a workspace for a task (browser, terminal, etc)
   - [] Add left icons to know the basics (volume, connection, power off, etc)
+
+- [] Make dwm change the software to open depeding on the tag (first tag: firefox, second tag: st, etc etc)
