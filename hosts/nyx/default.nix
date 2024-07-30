@@ -51,6 +51,8 @@
       ../common/dotfiles/dwm/patches/dwm-actualfullscreen-20211013-cb3f58a.diff
       # Useless gaps
       ../common/dotfiles/dwm/patches/dwm-uselessgap-20211119-58414bee958f2.diff
+      # Alternative Tags
+      ../common/dotfiles/dwm/patches/dwm-alternativetags-6.3.diff
     ];
   };
   services.xserver.displayManager.startx.enable = true;
