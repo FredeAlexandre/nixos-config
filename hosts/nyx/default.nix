@@ -100,6 +100,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  networking.wireless.iwd.enable = true;
+  networking.networkmanager.wifi.backend = "iwd";
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -111,6 +114,7 @@
     lazygit
     greetd.tuigreet
     feh
+    unstable.impala
     inputs.alejandra.defaultPackage."x86_64-linux"
   ];
 
