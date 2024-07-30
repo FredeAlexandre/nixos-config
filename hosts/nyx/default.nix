@@ -51,8 +51,6 @@
       ../common/dotfiles/dwm/patches/dwm-actualfullscreen-20211013-cb3f58a.diff
       # Useless gaps
       ../common/dotfiles/dwm/patches/dwm-uselessgap-20211119-58414bee958f2.diff
-      # Alternative Tags
-      ../common/dotfiles/dwm/patches/dwm-alternativetags-6.3.diff
     ];
   };
   services.xserver.displayManager.startx.enable = true;
@@ -102,9 +100,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  networking.wireless.iwd.enable = true;
-  networking.networkmanager.wifi.backend = "iwd";
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -118,6 +113,9 @@
     feh
     unstable.impala
     bluetui
+    (slstatus.override {
+      conf = ../common/dotfiles/slstatus/config.def.h;
+    })
     inputs.alejandra.defaultPackage."x86_64-linux"
   ];
 
