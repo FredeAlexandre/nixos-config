@@ -18,6 +18,8 @@ feh --no-fehbg --bg-fill "$HOME/Pictures/wallpaper.png"
 # export QT_IM_MODULE='fcitx'
 # export XMODIFIERS='@im=fcitx'
 
+slstatus &
+
 # Uncheck "Allow Overriding System XKB Settings" on Fcitx's XCB add-on settings
 # to prevent it from undoing the `xmodmap` above.
 # fcitx5 &
