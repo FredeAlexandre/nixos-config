@@ -1,10 +1,12 @@
 - [] Make keyboard functions work again
-- [] Make a demnu to manage wifi connections
-- [] Make dmenu to connect to bluetooth devices
-- [] Make work sound output to bluetooth devices
+- [] Make a stable solution to manage wifi
+  - [] Make a demnu to manage wifi connections
+- [] Make a stable solution to manage bluetooth
+  - [] Make a demnu to manage bluetooth connections
 - [] Find a solution to manage sound inputs and outputs
 - [] Rice up the status bar
   - [] Make a workspace for a task (browser, terminal, etc)
   - [] Add left icons to know the basics (volume, connection, power off, etc)
+- [] Make possible to select file and folder from others softwares
 
 - [] Make dwm change the software to open depeding on the tag (first tag: firefox, second tag: st, etc etc)
