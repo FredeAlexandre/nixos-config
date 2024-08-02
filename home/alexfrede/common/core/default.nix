@@ -23,8 +23,8 @@
     sessionVariables = {
       FLAKE = "$HOME/Configuration";
       SHELL = "zsh";
-      TERM = "st";
-      TERMINAL = "st";
+      TERM = "kitty";
+      TERMINAL = "kitty";
       # EDITOR = "nvim";
       # MANPAGER = "batman"; # see ./cli/bat.nix
     };
@@ -54,17 +54,6 @@
     wget # downloader
     zip # zip compression
     discord
-    (st.override {
-      patches = [
-        ../dotfiles/st/patches/st-colorschemes-0.8.5.diff
-        ../dotfiles/st/patches/st-anysize-20220718-baa9357.diff
-      ];
-      conf = builtins.readFile ../dotfiles/st/config.def.h;
-    })
-    (pkgs.unstable.dmenu.override {
-      patches = [];
-      conf = ../dotfiles/dmenu/config.def.h;
-    })
   ];
 
   nixpkgs = {
@@ -113,14 +102,6 @@
       enable = true;
       enableZshIntegration = true;
     };
-  };
-
-  home.file.".xinitrc" = {
-    source = ../dotfiles/startx/.xinitrc;
-  };
-
-  home.file."Pictures/wallpaper.png" = {
-    source = ../dotfiles/wallpaper/wallpaper.png;
   };
 
   # Nicely reload system units when changing configs

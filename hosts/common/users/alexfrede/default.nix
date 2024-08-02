@@ -36,10 +36,4 @@ in {
   };
 
   home-manager.users.${username} = import (configLib.relativeToRoot "home/${username}/${config.networking.hostName}.nix");
-
-  programs.zsh.enable = true;
-  programs.git.enable = true;
-  environment.systemPackages = [
-    pkgs.just
-  ];
 }
