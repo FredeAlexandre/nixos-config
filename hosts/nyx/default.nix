@@ -36,23 +36,21 @@
     dpi = 180;
 
     # Xfce desktop manager
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
-    };
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
 
     # Keybord layout
     xkb = {
       layout = "us";
       variant = "";
     };
-
-    # Enable touchpad support (enabled default in most desktopManager).
-    libinput.enable = true;
   };
 
   # Display Manager session
-  services.displayManager.defaultSession = "xfce";
+  # services.displayManager.defaultSession = "xfce";
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput.enable = true;
 
   # Bluetooth
   hardware.bluetooth.enable = true;
