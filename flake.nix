@@ -33,7 +33,7 @@
     homeManagerModules = import ./modules/home-manager;
 
     # Custom modifications/overrides to upstream packages.
-    overlays = import ./overlays {inherit inputs outputs;};
+    overlays = import ./overlays {inherit inputs outputs lib;};
 
     nixosConfigurations = {
       nyx = lib.nixosSystem {

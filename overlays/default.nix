@@ -1,7 +1,11 @@
 #
 # This file defines overlays/custom modifications to upstream packages
 #
-{inputs, ...}: {
+{
+  inputs,
+  lib,
+  ...
+}: {
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs {pkgs = final;};
 
@@ -19,6 +23,9 @@
   unstable-packages = final: _prev: {
     unstable = import inputs.nixpkgs-unstable {
       system = final.system;
+      config.allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+        ];
     };
   };
 }

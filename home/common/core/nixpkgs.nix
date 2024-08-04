@@ -1,8 +1,16 @@
-{outputs, ...}: {
+{
+  outputs,
+  lib,
+  ...
+}: {
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
     config = {
-      allowUnfree = true;
+      allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+          "unrar"
+          "discord"
+        ];
     };
   };
 }
