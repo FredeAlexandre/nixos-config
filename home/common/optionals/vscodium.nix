@@ -14,6 +14,7 @@
       "git.enableSmartCommit" = true;
       "git.autofetch" = true;
       "git.confirmSync" = false;
+      "editor.fontFamily" = "'FiraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace";
     };
   };
 
