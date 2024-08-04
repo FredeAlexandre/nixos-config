@@ -8,6 +8,11 @@
       arrterian.nix-env-selector
       jnoortheen.nix-ide
     ];
+    userSettings = {
+      "extensions.autoCheckUpdates" = false;
+      "update.mode" = "none";
+      "git.enableSmartCommit" = true;
+    };
   };
 
   home.sessionVariables = {
