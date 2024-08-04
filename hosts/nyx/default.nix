@@ -71,9 +71,6 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # System wide packages
   environment.systemPackages = with pkgs; [
     just
