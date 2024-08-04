@@ -73,10 +73,6 @@
 
   # System wide packages
   environment.systemPackages = with pkgs; [
-    just
-    vscode
-    neofetch
-    kitty
     inputs.alejandra.defaultPackage."x86_64-linux"
   ];
 
