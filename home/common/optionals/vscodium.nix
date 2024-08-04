@@ -13,6 +13,7 @@
       "update.mode" = "none";
       "git.enableSmartCommit" = true;
       "git.autofetch" = true;
+      "git.confirmSync" = false;
     };
   };
 
