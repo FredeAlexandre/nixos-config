@@ -66,11 +66,6 @@
 
   programs = {
     home-manager.enable = true;
-    git = {
-      enable = true;
-      userEmail = "alexandre.frede.pro@gmail.com  ";
-      userName = "Alexandre Frede";
-    };
     zsh = {
       enable = true;
       enableCompletion = true;

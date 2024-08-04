@@ -76,7 +76,6 @@
     just
     vscode
     neofetch
-    lazygit
     kitty
     inputs.alejandra.defaultPackage."x86_64-linux"
   ];
