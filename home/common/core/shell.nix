@@ -8,6 +8,7 @@
 
       shellAliases = {
         cd = "z";
+        cat = "bat -p";
         ls = "eza --icons";
         ll = "ls -l";
         update = "just --justfile ~/Configuration/justfile rebuild";
@@ -47,6 +48,7 @@
     zip # zip compression
     just # command runner
     neofetch # Show information of host
+    bat # Show files better than cat
     inputs.alejandra.defaultPackage."x86_64-linux" # Formatter for nix
   ];
 
