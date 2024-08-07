@@ -71,11 +71,6 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  # System wide packages
-  environment.systemPackages = with pkgs; [
-    inputs.alejandra.defaultPackage."x86_64-linux"
-  ];
-
   # Fonts
   fonts = {
     packages = with pkgs; [

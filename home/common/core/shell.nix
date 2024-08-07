@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   programs = {
     zsh = {
       enable = true;
@@ -47,6 +47,7 @@
     zip # zip compression
     just # command runner
     neofetch # Show information of host
+    inputs.alejandra.defaultPackage."x86_64-linux" # Formatter for nix
   ];
 
   home.sessionVariables = {
