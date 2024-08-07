@@ -46,6 +46,16 @@
           ./hosts/nyx
         ];
       };
+      medusa = lib.nixosSystem {
+        inherit specialArgs;
+        modules = [
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = specialArgs;
+          }
+          ./hosts/medusa
+        ];
+      };
     };
   };
 }
