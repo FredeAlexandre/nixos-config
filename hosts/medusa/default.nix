@@ -1,26 +1,37 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, configLib, ... }:
 
 {
-  imports = [
-    <nixos-wsl/modules>
-    (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
+  imports = (map configLib.relativeToRoot [ "hosts/common/core" ]);
+
+  programs.nix-ld = {
+    enable = true;
+    package = pkgs.nix-ld-rs;
+};
+  # Hostname
+  networking.hostName = "medusa";
+
+  # System wide packages
+  environment.systemPackages = with pkgs; [
+    inputs.alejandra.defaultPackage."x86_64-linux"
+    wget
+    bun
+    rustup
+    git
+    just
   ];
 
-  environment.systemPackages = [
-    pkgs.wget
-    pkgs.bun
-    pkgs.rustup
-    pkgs.sbclPackages.cl-rsvg2
-    pkgs.lispPackages.cl-webkit2
-  ];
+  # Fonts
+  fonts = {
+    packages = with pkgs; [
+      (nerdfonts.override {fonts = ["FiraCode"];})
+    ];
+  };
+
+  # System State Version
+  system.stateVersion = "24.05";
 
   wsl.enable = true;
   wsl.defaultUser = "nixos";
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  services.vscode-server.enable = true;
-
-  system.stateVersion = "24.05";
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
-

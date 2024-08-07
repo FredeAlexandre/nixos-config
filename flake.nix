@@ -11,6 +11,9 @@
     alejandra.url = "https://flakehub.com/f/kamadorueda/alejandra/3.*.tar.gz";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+
     sops-nix.url = "https://flakehub.com/f/Mic92/sops-nix/0.1.*.tar.gz";
     sops-nix.inputs.nixpkgs-stable.follows = "nixpkgs";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -20,6 +23,7 @@
     self,
     nixpkgs,
     home-manager,
+    nixos-wsl,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -49,6 +53,7 @@
       medusa = lib.nixosSystem {
         inherit specialArgs;
         modules = [
+          nixos-wsl.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.extraSpecialArgs = specialArgs;
