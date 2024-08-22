@@ -7,47 +7,17 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+
+    ./configs/bootloader.nix
+    ./configs/desktop-environement.nix
+    ./configs/keyboard.nix
     ./configs/locale.nix
+    ./configs/networking.nix
     ./configs/nix.nix
     ./configs/nixpkgs.nix
     ./configs/user.nix
     ./configs/zsh.nix
   ];
-
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Hostname
-  networking.hostName = "nyx";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Enable the X11 windowing system
-  services.xserver = {
-    enable = true;
-
-    # Hidpi screen
-    dpi = 180;
-
-    # Xfce desktop manager
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-
-    # Keybord layout
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-  };
-
-  # Display Manager session
-  # services.displayManager.defaultSession = "xfce";
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
   # Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
