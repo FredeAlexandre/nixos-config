@@ -39,7 +39,7 @@
         drop_shadow = true;
         shadow_range = 4;
         shadow_render_power = 3;
-        col.shadow = "rgba(1a1a1aee)";
+        "col.shadow" = "rgba(1a1a1aee)";
 
         blur = {
           enabled = true;
@@ -108,7 +108,7 @@
         "$mainMod, M, exit,"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
-        "$mainMod, R, exec, $menu"
+        "$mainMod, F, exec, $menu"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         "$mainMod, left, movefocus, l"

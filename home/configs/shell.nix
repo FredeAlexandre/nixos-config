@@ -53,6 +53,7 @@
     just # command runner
     neofetch # Show information of host
     bat # Show files better than cat
+    wofi
     inputs.alejandra.defaultPackage."x86_64-linux" # Formatter for nix
   ];
 
