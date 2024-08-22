@@ -2,6 +2,7 @@
   imports = [
     ./configs/discord.nix
     ./configs/git.nix
+    ./configs/hyprland.nix
     ./configs/kitty.nix
     ./configs/nix.nix
     ./configs/nixpkgs.nix
