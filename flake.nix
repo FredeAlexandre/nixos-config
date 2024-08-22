@@ -10,16 +10,12 @@
 
     alejandra.url = "https://flakehub.com/f/kamadorueda/alejandra/3.*.tar.gz";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
-
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
-    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    nixos-wsl,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -43,18 +39,7 @@
           {
             home-manager.extraSpecialArgs = specialArgs;
           }
-          ./hosts/nyx
-        ];
-      };
-      medusa = lib.nixosSystem {
-        inherit specialArgs;
-        modules = [
-          nixos-wsl.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs = specialArgs;
-          }
-          ./hosts/medusa
+          ./configuration
         ];
       };
     };

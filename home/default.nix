@@ -1,14 +1,13 @@
-{
-  config,
-  lib,
-  pkgs,
-  outputs,
-  configLib,
-  ...
-}: {
-  imports =
-    (configLib.scanPaths ./.)
-    ++ (builtins.attrValues outputs.homeManagerModules);
+{configVars, ...}: {
+  imports = [
+    ./discord.nix
+    ./git.nix
+    ./kitty.nix
+    ./nix.nix
+    ./nixpkgs.nix
+    ./shell.nix
+    ./vscodium.nix
+  ];
 
   services.ssh-agent.enable = true;
 

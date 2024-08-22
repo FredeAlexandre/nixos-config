@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
@@ -8,16 +5,16 @@
   configLib,
   ...
 }: {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ]
-    ++ (map configLib.relativeToRoot [
-      "hosts/common/core"
-    ]);
+  imports = [
+    ./hardware-configuration.nix
+    ./configs/locale.nix
+    ./configs/nix.nix
+    ./configs/nixpkgs.nix
+    ./configs/user.nix
+    ./configs/zsh.nix
+  ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -68,7 +65,7 @@
     pulse.enable = true;
   };
 
-  # Install firefox.
+  # Install firefox
   programs.firefox.enable = true;
 
   # Fonts
@@ -80,4 +77,6 @@
 
   # System State Version
   system.stateVersion = "24.05";
+
+  hardware.enableRedistributableFirmware = true;
 }
