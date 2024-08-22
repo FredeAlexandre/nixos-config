@@ -39,7 +39,7 @@
           {
             home-manager.extraSpecialArgs = specialArgs;
           }
-          ./configuration
+          ./configuration.nix
         ];
       };
     };
