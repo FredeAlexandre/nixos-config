@@ -12,7 +12,7 @@
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
 
-      "env" = ["XCURSOR_SIZE,24" "HYPRCURSOR_SIZE,24"];
+      "env" = ["XCURSOR_SIZE,24" "HYPRCURSOR_SIZE,24" "GDK_SCALE,2"];
 
       general = {
         gaps_in = 5;
@@ -28,6 +28,10 @@
         allow_tearing = false;
 
         layout = "dwindle";
+      };
+
+      xwayland = {
+        force_zero_scaling = true;
       };
 
       decoration = {

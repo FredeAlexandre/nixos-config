@@ -1,4 +1,4 @@
-{configVars, ...}: {
+{...}: {
   imports = [
     ./configs/discord.nix
     ./configs/git.nix
@@ -8,6 +8,7 @@
     ./configs/nixpkgs.nix
     ./configs/shell.nix
     ./configs/vscodium.nix
+    ./configs/wofi.nix
   ];
 
   services.ssh-agent.enable = true;
