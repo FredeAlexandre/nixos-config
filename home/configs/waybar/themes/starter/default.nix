@@ -1,8 +1,4 @@
 {
-  settings =
-    {
-      modules = import ./modules.nix;
-    }
-    // import ./config.nix;
-  style = ./style.nix;
+  settings.main = import ./modules.nix // import ./config.nix;
+  style = builtins.readFile ./style.css;
 }
