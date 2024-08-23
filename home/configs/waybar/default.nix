@@ -3,7 +3,7 @@
     enable = true;
     systemd.enable = true;
     settings = {
-      modules = {};
+      modules = import ./modules.nix;
     };
     # style = '''';
   };
