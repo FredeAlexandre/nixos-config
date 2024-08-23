@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./configs/waybar
     ./configs/discord.nix
     ./configs/git.nix
     ./configs/hyprland.nix
