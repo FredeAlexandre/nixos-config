@@ -35,5 +35,5 @@ in {
     hashedPassword = hashedPassword;
   };
 
-  home-manager.users.${username} = import (configLib.relativeToRoot "home/${config.networking.hostName}.nix");
+  home-manager.users.${username} = import ../home;
 }
