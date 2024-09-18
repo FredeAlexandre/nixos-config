@@ -12,7 +12,7 @@
     ./configs/desktop-environement.nix
     ./configs/docker.nix
     ./configs/fonts.nix
-    ./configs/i18n.nixsss
+    ./configs/i18n.nix
     ./configs/keyboard.nix
     ./configs/network.nix
     ./configs/nix.nix
