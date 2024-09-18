@@ -1,15 +1,11 @@
 {...}: {
   imports = [
-    ./configs/waybar
     ./configs/discord.nix
     ./configs/git.nix
-    ./configs/hyprland.nix
-    ./configs/kitty.nix
     ./configs/nix.nix
     ./configs/nixpkgs.nix
     ./configs/shell.nix
     ./configs/vscodium.nix
-    ./configs/wofi.nix
   ];
 
   services.ssh-agent.enable = true;

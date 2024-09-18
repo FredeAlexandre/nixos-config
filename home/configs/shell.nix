@@ -15,6 +15,7 @@
         cat = "bat -p";
         ls = "eza --icons";
         ll = "ls -l";
+        code = "codium";
         update = "just --justfile ~/Configuration/justfile rebuild";
       };
     };
@@ -54,7 +55,8 @@
     neofetch # Show information of host
     bat # Show files better than cat
     killall
-    inputs.alejandra.defaultPackage."x86_64-linux" # Formatter for nix
+    zen-browser
+    alejandra # Formatter for nix
   ];
 
   home.sessionVariables = {

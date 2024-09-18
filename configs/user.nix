@@ -1,10 +1,7 @@
 {
   pkgs,
-  inputs,
-  config,
   lib,
-  configVars,
-  configLib,
+  config,
   ...
 }: let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
@@ -35,5 +32,6 @@ in {
     hashedPassword = hashedPassword;
   };
 
-  home-manager.users.${username} = ../home;
+  home-manager.users.${username} = import ../home {inherit pkgs lib;};
+  home-manager.backupFileExtension = "backup";
 }

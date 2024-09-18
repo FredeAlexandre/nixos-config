@@ -1,16 +1,12 @@
 {...}: {
-  services.xserver = {
-    enable = true;
-    dpi = 180;
-  };
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
 
-  services.displayManager.sddm = {
-    enable = true;
-    enableHidpi = true;
-  };
+  # Enable the Budgie Desktop environment.
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.budgie.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "alexfrede";
 }
